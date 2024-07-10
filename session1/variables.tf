@@ -16,6 +16,11 @@ variable "sg_cidr" {
     default = ["0.0.0.0/0"]
 }
 
+variable "instance_name" {
+  #type        = list
+  default     = "mongodb"
+}
+
 variable "tags" {
   type        = map
   default     = {
