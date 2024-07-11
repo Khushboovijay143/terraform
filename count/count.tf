@@ -15,3 +15,8 @@ resource "aws_route53_record" "record" {
   ttl     = 1
   records = [aws_instance.conditions[count.index].public_ip]
 }
+
+# resource "aws_key_pair" "deployer" {
+#   key_name   = "vijay-pub"
+#   public_key = file("${path.module}/vijay.pub")
+# } I don't requrie it because i have dont it mannually.
