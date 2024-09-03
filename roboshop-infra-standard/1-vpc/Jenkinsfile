@@ -16,11 +16,18 @@ pipeline {
                 '''
             }
         }
-        // stage('Deploy') {
-        //     steps {
-        //         echo 'Deploying....'
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                input 'Shall I apply'
+            }
+        }
+         stage('Deploy') {
+            steps {
+                sh '''
+                    terraform apply -auto-approve
+                '''
+            }
+        }
     }
 
     post { 
